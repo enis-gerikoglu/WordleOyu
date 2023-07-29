@@ -115,25 +115,21 @@ function processInput(e) {
             if (character === "ğ") {
                 character = "Ğ";
             }}
-    else if (e.key) {
-                character = e.key;
-                // Convert "i" to "İ" manually
-                if (character === "ğ") {
-                    character = "Ğ";
-                }}        
+        
         } 
-     else if (e.key) {
+    else if (e.key) {
             character = e.key;
             // Convert "i" to "İ" manually
             if (character === "ç") {
                 character = "Ç";
-            }}   
+            }}
+               
         
     else if (e.key) {
                 character = e.key;
                 // Convert "i" to "İ" manually
-                if (character === "ş") {
-                    character = "Ş";
+                if (character === "KeyŞ") {
+                    character = "KeyŞ";
                 }}    
     else if (e.key) {
                     character = e.key;
@@ -151,7 +147,7 @@ function processInput(e) {
         
         
         
-        else {
+    else {
         character = e.code;
         // Convert "KeyI" to "Keyİ" manually
         if (character === "KeyI") {
@@ -180,11 +176,20 @@ function processInput(e) {
      
 
     // Rest of the function remains unchanged
-    if (/^[A-ZÇĞİÖŞÜ]$/.test(character)) {
+    if (/^[a-zçğiçşü]$/.test(character)) {
         if (col < width) {
             let currTile = document.getElementById(row.toString() + '-' + col.toString());
             if (currTile.innerText == "") {
-                currTile.innerText = character;
+                currTile.innerText = character.toUpperCase();
+                col += 1;
+            }
+        }
+    }
+    if (/^[A-ZÇĞİÇŞÜ]$/.test(character)) {
+        if (col < width) {
+            let currTile = document.getElementById(row.toString() + '-' + col.toString());
+            if (currTile.innerText == "") {
+                currTile.innerText = character.toUpperCase();
                 col += 1;
             }
         }
