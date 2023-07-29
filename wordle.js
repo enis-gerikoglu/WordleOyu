@@ -176,7 +176,7 @@ function processInput(e) {
      
 
     // Rest of the function remains unchanged
-    if (/^[a-zçğiçşü]$/.test(character)) {
+    if (/^[çğiçşü]$/.test(character)) {
         if (col < width) {
             let currTile = document.getElementById(row.toString() + '-' + col.toString());
             if (currTile.innerText == "") {
