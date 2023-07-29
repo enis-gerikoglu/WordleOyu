@@ -7,13 +7,15 @@ var col = 0; //current letter for that attempt
 
 var gameOver = false;
 // var word = "SQUID";
-var wordList = ["faizsiz"]
+var wordList = ["FAİZSİZ",]
 
-var guessList = ["faizsiz"]
+var guessList = ["FAİZSİZ"]
 
 guessList = guessList.concat(wordList);
 
-var word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
+wordList = wordList.map(word => word.toLocaleUpperCase('tr'));
+
+var word = wordList[Math.floor(Math.random()*wordList.length)].toLocaleUpperCase('tr');
 console.log(word);
 
 window.onload = function(){
@@ -96,8 +98,25 @@ function processKey()
 function processInput(e) {
     
     if (gameOver) return; 
-
+    
     let character = e.key ? e.key.toUpperCase() : e.code;
+   
+
+
+    if (e.key) {
+        character = e.key;
+        // Convert "i" to "İ" manually
+        if (character === "i") {
+            character = "İ";
+        }
+    } else {
+        character = e.code;
+        // Convert "KeyI" to "Keyİ" manually
+        if (character === "KeyI") {
+            character = "Keyİ";
+        }
+    }
+    
    
 
     // Check for Turkish characters and convert to uppercase
@@ -114,7 +133,9 @@ function processInput(e) {
         character = "Ş";
     } else if (character === "Ü" || character === "KeyÜ") {
         character = "Ü";
-    }     
+    }
+    
+     
 
     // Rest of the function remains unchanged
     if (/^[A-ZÇĞİÖŞÜ]$/.test(character)) {
@@ -165,8 +186,8 @@ function update() {
         let letter = currTile.innerText;
         guess += letter;
     }
-
-    guess = guess.toLowerCase(); //case sensitive
+    
+    guess = guess.toUpperCase(); //case sensitive
     console.log(guess);
 
     if (!guessList.includes(guess)) {
@@ -198,6 +219,8 @@ function update() {
 
         //Is it in the correct position?
         if (word[c] == letter) {
+            
+
             currTile.classList.add("correct");
 
             let keyTile = document.getElementById("Key" + letter);
