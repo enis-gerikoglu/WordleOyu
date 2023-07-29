@@ -7,9 +7,9 @@ var col = 0; //current letter for that attempt
 
 var gameOver = false;
 // var word = "SQUID";
-var wordList = ["FAİZSİZ",]
+var wordList = ["ÖĞRENME","FAİZSİZ","ÜRETMEK","ABANMAK", "ABARTIK", "ABARTIŞ", "ABARTMA", "ABAZACA", "ABESLİK", "ABHAZCA", "ABİDEVİ", "ABLAKÇA", "ABLALIK", "BABACAN", "BABACIK", "BABACIL", "BABAÇKO", "BABADAĞ", "BABAEVİ", "BABAKÖŞ", "BABALIK", "BABASIZ", "BABIALİ", "CABADAN", "CADALOZ", "CADILIK", "CAHİLCE", "CAKASIZ", "CAMADAN", "CAMEKAN", "CAMLAMA", "CANAVAR", "CANFEZA","ÇABASIZ", "ÇABUCAK", "ÇABUKÇA", "ÇAÇALIK", "ÇAÇARON", "ÇADIRCI", "ÇADIRLI", "ÇAĞANOZ", "ÇAĞILTI", "ÇAĞIRIM", "DADAİST", "DADAİZM", "DADANIŞ", "DADANMA", "DADILIK", "DAĞBAŞI", "DAĞDAĞA", "DAĞILIM", "DAĞILIŞ", "DAĞILMA", "EBELEME", "EBEVEYN", "ECEABAT", "EDEPSİZ", "EDİBANE", "EDİLGEN", "EDİLGİN", "EDİLMEK", "EDİMSEL", "EDİMSİZ", "FAALLİK", "FABRİKA", "FACİALI", "FAGOSİT", "FAĞFURİ", "FAHRİYE", "FAİKLİK", "FAİLLİK", "FAİZSİZ", "FAKİRCE", "GABAVET", "GABİLİK", "GABONLU", "GABYACI", "GACIRTI", "GAGAMSI", "GAGAVUZ", "GAİLELİ", "GAİPLİK", "GAKLAMA", "HABASET", "HABERCİ", "HABERLİ", "HABİTAT", "HABİTUS", "HACAMAT", "HACIAĞA", "HACILAR", "HACILIK", "İADESİZ", "İBLİSÇE", "İBLİSÇİ", "İBNELİK", "İBRİKÇİ", "İBRİŞİM", "İÇBÜKEY", "İÇERLEK", "İÇERMEK", "İÇGÖREÇ", "IĞDIRLI", "IHLAMAK", "IHLAMUR", "IHTIRMA", "IKINMAK", "IKLAMAK", "ILGAMAK", "ILGARCI", "ILIKÇIL", "ILIKLIK", "JAKARLI", "JAKOBEN", "JAPONCA", "JELATİN", "JENERİK", "JENOSİT", "JEODEZİ", "JEOLOJİ", "JETONCU", "JİLETLİ", "KABADÜZ", "KABAHAT", "KABAKÇI", "KABALAK", "KABALIK", "KABARIK", "KABARIŞ", "KABARMA", "KABARTI", "KABAŞİŞ", "LACEREM", "LADENLİ", "LADESLİ", "LAFAZAN", "LAFLAMA", "LAĞIMCI", "LAHAVLE", "LAHZADA", "LAİKLİK", "LAİSİZM", "MAAŞSIZ", "MABEYİN", "MACARCA", "MACUNCU", "MAÇOLUK", "MADALYA", "MADDECİ", "MADEMKİ", "MADENCİ", "MADENSİ", "NABEKAR", "NADANCA", "NADASLI", "NADİRAT", "NADİREN", "NAGEHAN", "NAĞMELİ", "NAHIRCI", "NAİPLİK", "NAKARAT", "OBABAŞI", "OBELİSK", "OBEZİTE", "OBEZLİK", "OBRUKLU", "OBSESİF", "OBURLUK", "OCAKLIK", "OCAKSIZ", "ODABAŞI", "ÖÇLENME", "ÖDEMELİ", "ÖDENMEK", "ÖDEŞMEK", "ÖDETMEK", "ÖDEVCİL", "ÖDLEKÇE", "ÖDÜNSÜZ", "ÖFKESİZ", "ÖĞLENCİ", "PABUÇÇU", "PABUÇLU", "PAÇALIK", "PAÇARIZ", "PAÇASIZ", "PAÇAVRA", "PADALYA", "PADİŞAH", "PAFTALI", "PAHLAMA", "RABBANİ", "RABBENA", "RADANSA", "RADARCI", "RADİKAL", "RADYOCU", "RAFADAN", "RAFİNAJ", "RAHATÇA", "RAHMANİ", "SAATİNE", "SAATLİK", "SABAHÇI"]
 
-var guessList = ["FAİZSİZ"]
+var guessList = ["ÖĞRENME","FAİZSİZ","ÜRETMEK","ABANMAK", "ABARTIK", "ABARTIŞ", "ABARTMA", "ABAZACA", "ABESLİK", "ABHAZCA", "ABİDEVİ", "ABLAKÇA", "ABLALIK", "BABACAN", "BABACIK", "BABACIL", "BABAÇKO", "BABADAĞ", "BABAEVİ", "BABAKÖŞ", "BABALIK", "BABASIZ", "BABIALİ", "CABADAN", "CADALOZ", "CADILIK", "CAHİLCE", "CAKASIZ", "CAMADAN", "CAMEKAN", "CAMLAMA", "CANAVAR", "CANFEZA","ÇABASIZ", "ÇABUCAK", "ÇABUKÇA", "ÇAÇALIK", "ÇAÇARON", "ÇADIRCI", "ÇADIRLI", "ÇAĞANOZ", "ÇAĞILTI", "ÇAĞIRIM", "DADAİST", "DADAİZM", "DADANIŞ", "DADANMA", "DADILIK", "DAĞBAŞI", "DAĞDAĞA", "DAĞILIM", "DAĞILIŞ", "DAĞILMA", "EBELEME", "EBEVEYN", "ECEABAT", "EDEPSİZ", "EDİBANE", "EDİLGEN", "EDİLGİN", "EDİLMEK", "EDİMSEL", "EDİMSİZ", "FAALLİK", "FABRİKA", "FACİALI", "FAGOSİT", "FAĞFURİ", "FAHRİYE", "FAİKLİK", "FAİLLİK", "FAİZSİZ", "FAKİRCE", "GABAVET", "GABİLİK", "GABONLU", "GABYACI", "GACIRTI", "GAGAMSI", "GAGAVUZ", "GAİLELİ", "GAİPLİK", "GAKLAMA", "HABASET", "HABERCİ", "HABERLİ", "HABİTAT", "HABİTUS", "HACAMAT", "HACIAĞA", "HACILAR", "HACILIK", "İADESİZ", "İBLİSÇE", "İBLİSÇİ", "İBNELİK", "İBRİKÇİ", "İBRİŞİM", "İÇBÜKEY", "İÇERLEK", "İÇERMEK", "İÇGÖREÇ", "IĞDIRLI", "IHLAMAK", "IHLAMUR", "IHTIRMA", "IKINMAK", "IKLAMAK", "ILGAMAK", "ILGARCI", "ILIKÇIL", "ILIKLIK", "JAKARLI", "JAKOBEN", "JAPONCA", "JELATİN", "JENERİK", "JENOSİT", "JEODEZİ", "JEOLOJİ", "JETONCU", "JİLETLİ", "KABADÜZ", "KABAHAT", "KABAKÇI", "KABALAK", "KABALIK", "KABARIK", "KABARIŞ", "KABARMA", "KABARTI", "KABAŞİŞ", "LACEREM", "LADENLİ", "LADESLİ", "LAFAZAN", "LAFLAMA", "LAĞIMCI", "LAHAVLE", "LAHZADA", "LAİKLİK", "LAİSİZM", "MAAŞSIZ", "MABEYİN", "MACARCA", "MACUNCU", "MAÇOLUK", "MADALYA", "MADDECİ", "MADEMKİ", "MADENCİ", "MADENSİ", "NABEKAR", "NADANCA", "NADASLI", "NADİRAT", "NADİREN", "NAGEHAN", "NAĞMELİ", "NAHIRCI", "NAİPLİK", "NAKARAT", "OBABAŞI", "OBELİSK", "OBEZİTE", "OBEZLİK", "OBRUKLU", "OBSESİF", "OBURLUK", "OCAKLIK", "OCAKSIZ", "ODABAŞI", "ÖÇLENME", "ÖDEMELİ", "ÖDENMEK", "ÖDEŞMEK", "ÖDETMEK", "ÖDEVCİL", "ÖDLEKÇE", "ÖDÜNSÜZ", "ÖFKESİZ", "ÖĞLENCİ", "PABUÇÇU", "PABUÇLU", "PAÇALIK", "PAÇARIZ", "PAÇASIZ", "PAÇAVRA", "PADALYA", "PADİŞAH", "PAFTALI", "PAHLAMA", "RABBANİ", "RABBENA", "RADANSA", "RADARCI", "RADİKAL", "RADYOCU", "RAFADAN", "RAFİNAJ", "RAHATÇA", "RAHMANİ", "SAATİNE", "SAATLİK", "SABAHÇI"]
 
 guessList = guessList.concat(wordList);
 
@@ -109,7 +109,49 @@ function processInput(e) {
         if (character === "i") {
             character = "İ";
         }
-    } else {
+    else if (e.key) {
+            character = e.key;
+            // Convert "i" to "İ" manually
+            if (character === "ğ") {
+                character = "Ğ";
+            }}
+    else if (e.key) {
+                character = e.key;
+                // Convert "i" to "İ" manually
+                if (character === "ğ") {
+                    character = "Ğ";
+                }}        
+        } 
+     else if (e.key) {
+            character = e.key;
+            // Convert "i" to "İ" manually
+            if (character === "ç") {
+                character = "Ç";
+            }}   
+        
+    else if (e.key) {
+                character = e.key;
+                // Convert "i" to "İ" manually
+                if (character === "ş") {
+                    character = "Ş";
+                }}    
+    else if (e.key) {
+                    character = e.key;
+                    // Convert "i" to "İ" manually
+                    if (character === "ö") {
+                        character = "Ö";
+                    }}    
+        
+    else if (e.key) {
+            character = e.key;
+                // Convert "i" to "İ" manually
+                if (character === "ü") {
+                            character = "Ü";
+                }}   
+        
+        
+        
+        else {
         character = e.code;
         // Convert "KeyI" to "Keyİ" manually
         if (character === "KeyI") {
@@ -120,7 +162,7 @@ function processInput(e) {
    
 
     // Check for Turkish characters and convert to uppercase
-    if (character === "Ç" || character === "KeyÇ") {
+     if (character === "Ç" || character === "KeyÇ") {
         character = "Ç";
     } else if (character === "Ğ" || character === "KeyĞ") {
         character = "Ğ";
