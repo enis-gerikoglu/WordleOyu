@@ -1,4 +1,3 @@
-
 var height = 6; //number of guesses
 var width =7; //length of the word
 
@@ -8,7 +7,6 @@ var col = 0; //current letter for that attempt
 var gameOver = false;
 // var word = "SQUID";
 var wordList = ["ÖĞRENME","FAİZSİZ","ÜRETMEK","ABANMAK", "ABARTIK", "ABARTIŞ", "ABARTMA", "ABAZACA", "ABESLİK", "ABHAZCA", "ABİDEVİ", "ABLAKÇA", "ABLALIK", "BABACAN", "BABACIK", "BABACIL", "BABAÇKO", "BABADAĞ", "BABAEVİ", "BABAKÖŞ", "BABALIK", "BABASIZ", "BABIALİ", "CABADAN", "CADALOZ", "CADILIK", "CAHİLCE", "CAKASIZ", "CAMADAN", "CAMEKAN", "CAMLAMA", "CANAVAR", "CANFEZA","ÇABASIZ", "ÇABUCAK", "ÇABUKÇA", "ÇAÇALIK", "ÇAÇARON", "ÇADIRCI", "ÇADIRLI", "ÇAĞANOZ", "ÇAĞILTI", "ÇAĞIRIM", "DADAİST", "DADAİZM", "DADANIŞ", "DADANMA", "DADILIK", "DAĞBAŞI", "DAĞDAĞA", "DAĞILIM", "DAĞILIŞ", "DAĞILMA", "EBELEME", "EBEVEYN", "ECEABAT", "EDEPSİZ", "EDİBANE", "EDİLGEN", "EDİLGİN", "EDİLMEK", "EDİMSEL", "EDİMSİZ", "FAALLİK", "FABRİKA", "FACİALI", "FAGOSİT", "FAĞFURİ", "FAHRİYE", "FAİKLİK", "FAİLLİK", "FAİZSİZ", "FAKİRCE", "GABAVET", "GABİLİK", "GABONLU", "GABYACI", "GACIRTI", "GAGAMSI", "GAGAVUZ", "GAİLELİ", "GAİPLİK", "GAKLAMA", "HABASET", "HABERCİ", "HABERLİ", "HABİTAT", "HABİTUS", "HACAMAT", "HACIAĞA", "HACILAR", "HACILIK", "İADESİZ", "İBLİSÇE", "İBLİSÇİ", "İBNELİK", "İBRİKÇİ", "İBRİŞİM", "İÇBÜKEY", "İÇERLEK", "İÇERMEK", "İÇGÖREÇ", "IĞDIRLI", "IHLAMAK", "IHLAMUR", "IHTIRMA", "IKINMAK", "IKLAMAK", "ILGAMAK", "ILGARCI", "ILIKÇIL", "ILIKLIK", "JAKARLI", "JAKOBEN", "JAPONCA", "JELATİN", "JENERİK", "JENOSİT", "JEODEZİ", "JEOLOJİ", "JETONCU", "JİLETLİ", "KABADÜZ", "KABAHAT", "KABAKÇI", "KABALAK", "KABALIK", "KABARIK", "KABARIŞ", "KABARMA", "KABARTI", "KABAŞİŞ", "LACEREM", "LADENLİ", "LADESLİ", "LAFAZAN", "LAFLAMA", "LAĞIMCI", "LAHAVLE", "LAHZADA", "LAİKLİK", "LAİSİZM", "MAAŞSIZ", "MABEYİN", "MACARCA", "MACUNCU", "MAÇOLUK", "MADALYA", "MADDECİ", "MADEMKİ", "MADENCİ", "MADENSİ", "NABEKAR", "NADANCA", "NADASLI", "NADİRAT", "NADİREN", "NAGEHAN", "NAĞMELİ", "NAHIRCI", "NAİPLİK", "NAKARAT", "OBABAŞI", "OBELİSK", "OBEZİTE", "OBEZLİK", "OBRUKLU", "OBSESİF", "OBURLUK", "OCAKLIK", "OCAKSIZ", "ODABAŞI", "ÖÇLENME", "ÖDEMELİ", "ÖDENMEK", "ÖDEŞMEK", "ÖDETMEK", "ÖDEVCİL", "ÖDLEKÇE", "ÖDÜNSÜZ", "ÖFKESİZ", "ÖĞLENCİ", "PABUÇÇU", "PABUÇLU", "PAÇALIK", "PAÇARIZ", "PAÇASIZ", "PAÇAVRA", "PADALYA", "PADİŞAH", "PAFTALI", "PAHLAMA", "RABBANİ", "RABBENA", "RADANSA", "RADARCI", "RADİKAL", "RADYOCU", "RAFADAN", "RAFİNAJ", "RAHATÇA", "RAHMANİ", "SAATİNE", "SAATLİK", "SABAHÇI"]
-
 var guessList = ["ÖĞRENME","FAİZSİZ","ÜRETMEK","ABANMAK", "ABARTIK", "ABARTIŞ", "ABARTMA", "ABAZACA", "ABESLİK", "ABHAZCA", "ABİDEVİ", "ABLAKÇA", "ABLALIK", "BABACAN", "BABACIK", "BABACIL", "BABAÇKO", "BABADAĞ", "BABAEVİ", "BABAKÖŞ", "BABALIK", "BABASIZ", "BABIALİ", "CABADAN", "CADALOZ", "CADILIK", "CAHİLCE", "CAKASIZ", "CAMADAN", "CAMEKAN", "CAMLAMA", "CANAVAR", "CANFEZA","ÇABASIZ", "ÇABUCAK", "ÇABUKÇA", "ÇAÇALIK", "ÇAÇARON", "ÇADIRCI", "ÇADIRLI", "ÇAĞANOZ", "ÇAĞILTI", "ÇAĞIRIM", "DADAİST", "DADAİZM", "DADANIŞ", "DADANMA", "DADILIK", "DAĞBAŞI", "DAĞDAĞA", "DAĞILIM", "DAĞILIŞ", "DAĞILMA", "EBELEME", "EBEVEYN", "ECEABAT", "EDEPSİZ", "EDİBANE", "EDİLGEN", "EDİLGİN", "EDİLMEK", "EDİMSEL", "EDİMSİZ", "FAALLİK", "FABRİKA", "FACİALI", "FAGOSİT", "FAĞFURİ", "FAHRİYE", "FAİKLİK", "FAİLLİK", "FAİZSİZ", "FAKİRCE", "GABAVET", "GABİLİK", "GABONLU", "GABYACI", "GACIRTI", "GAGAMSI", "GAGAVUZ", "GAİLELİ", "GAİPLİK", "GAKLAMA", "HABASET", "HABERCİ", "HABERLİ", "HABİTAT", "HABİTUS", "HACAMAT", "HACIAĞA", "HACILAR", "HACILIK", "İADESİZ", "İBLİSÇE", "İBLİSÇİ", "İBNELİK", "İBRİKÇİ", "İBRİŞİM", "İÇBÜKEY", "İÇERLEK", "İÇERMEK", "İÇGÖREÇ", "IĞDIRLI", "IHLAMAK", "IHLAMUR", "IHTIRMA", "IKINMAK", "IKLAMAK", "ILGAMAK", "ILGARCI", "ILIKÇIL", "ILIKLIK", "JAKARLI", "JAKOBEN", "JAPONCA", "JELATİN", "JENERİK", "JENOSİT", "JEODEZİ", "JEOLOJİ", "JETONCU", "JİLETLİ", "KABADÜZ", "KABAHAT", "KABAKÇI", "KABALAK", "KABALIK", "KABARIK", "KABARIŞ", "KABARMA", "KABARTI", "KABAŞİŞ", "LACEREM", "LADENLİ", "LADESLİ", "LAFAZAN", "LAFLAMA", "LAĞIMCI", "LAHAVLE", "LAHZADA", "LAİKLİK", "LAİSİZM", "MAAŞSIZ", "MABEYİN", "MACARCA", "MACUNCU", "MAÇOLUK", "MADALYA", "MADDECİ", "MADEMKİ", "MADENCİ", "MADENSİ", "NABEKAR", "NADANCA", "NADASLI", "NADİRAT", "NADİREN", "NAGEHAN", "NAĞMELİ", "NAHIRCI", "NAİPLİK", "NAKARAT", "OBABAŞI", "OBELİSK", "OBEZİTE", "OBEZLİK", "OBRUKLU", "OBSESİF", "OBURLUK", "OCAKLIK", "OCAKSIZ", "ODABAŞI", "ÖÇLENME", "ÖDEMELİ", "ÖDENMEK", "ÖDEŞMEK", "ÖDETMEK", "ÖDEVCİL", "ÖDLEKÇE", "ÖDÜNSÜZ", "ÖFKESİZ", "ÖĞLENCİ", "PABUÇÇU", "PABUÇLU", "PAÇALIK", "PAÇARIZ", "PAÇASIZ", "PAÇAVRA", "PADALYA", "PADİŞAH", "PAFTALI", "PAHLAMA", "RABBANİ", "RABBENA", "RADANSA", "RADARCI", "RADİKAL", "RADYOCU", "RAFADAN", "RAFİNAJ", "RAHATÇA", "RAHMANİ", "SAATİNE", "SAATLİK", "SABAHÇI"]
 
 guessList = guessList.concat(wordList);
@@ -40,7 +38,7 @@ function intialize() {
     // Create the key board
     let keyboard = [
         ["Q", "W", "E", "R", "T", "Y", "U", "I", "O",  "P" , "Ğ", "Ü"],
-        ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ş","İ" , " "],
+        ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ş","İ" ],
         ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Ö","Ç" , "⌫" ]
     ]
 
@@ -96,11 +94,22 @@ function processKey()
 }
 
 function processInput(e) {
-    
+    if(row<=5) {
     if (gameOver) return; 
     
     let character = e.key ? e.key.toUpperCase() : e.code;
    
+
+    if (e.code == "Enter") {
+     //{} Check if the row is full
+        if (col == width  ) {
+            update();
+        } else {
+            document.getElementById("answer").innerText = "Fill the row";
+            return;
+        }
+    }
+ 
 
 
     if (e.key) {
@@ -176,7 +185,7 @@ function processInput(e) {
      
 
     // Rest of the function remains unchanged
-    if (/^[çğiçşü]$/.test(character)) {
+    if (/^[çğiçşüö]$/.test(character)) {
         if (col < width) {
             let currTile = document.getElementById(row.toString() + '-' + col.toString());
             if (currTile.innerText == "") {
@@ -185,7 +194,7 @@ function processInput(e) {
             }
         }
     }
-    if (/^[A-ZÇĞİÇŞÜ]$/.test(character)) {
+    if (/^[A-ZÇĞİÇŞÜÖ]$/.test(character)) {
         if (col < width) {
             let currTile = document.getElementById(row.toString() + '-' + col.toString());
             if (currTile.innerText == "") {
@@ -220,28 +229,43 @@ function processInput(e) {
     if (!gameOver && row == height) {
         gameOver = true;
         document.getElementById("answer").innerText = word;
-    }
+    }}
+    else{gameOver=true;}
 }
 
 function update() {
     let guess = "";
     document.getElementById("answer").innerText = "";
 
-    //string up the guesses into the word
+    if(row<=5) {
     for (let c = 0; c < width; c++) {
+        
         let currTile = document.getElementById(row.toString() + '-' + c.toString());
         let letter = currTile.innerText;
         guess += letter;
     }
-    
-    guess = guess.toUpperCase(); //case sensitive
-    console.log(guess);
 
-    if (!guessList.includes(guess)) {
-        document.getElementById("answer").innerText = "Not in word list";
+    guess = guess.toUpperCase(); // Case sensitive
+
+    // If the guess is correct
+    if (word === guess) {
+        document.getElementById("answer").innerText = "Correct! <3";
+        gameOver = true;
+
+        // Mark only the correct word's row as green
+        for (let c = 0; c < width; c++) {
+            let currTile = document.getElementById(row.toString() + '-' + c.toString());
+            currTile.classList.add("correct");
+        }
+
         return;
     }
-    
+
+    // If the guess is not in the word list
+    if (!guessList.includes(guess)) {
+        document.getElementById("answer").innerText = "Try again";
+        return;
+    }
     //start processing guess
     let correct = 0;
 
@@ -311,4 +335,5 @@ function update() {
 
     row += 1; //start new row
     col = 0; //start at 0 for new row
+}
 }
