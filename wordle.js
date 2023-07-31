@@ -151,7 +151,7 @@ function processInput(e) {
         character = e.code;
         // Convert "KeyI" to "Keyİ" manually
         if (character === "KeyI") {
-            character = "Keyİ";
+            character = "KeyI";
         }
     }
     
