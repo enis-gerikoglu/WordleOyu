@@ -86,7 +86,7 @@ overflow: hidden;
 }
 nav{
   position: relative;
-  bottom: 240px;
+  bottom: 280px;
   left: 0;
   z-index: 100;  
 }

@@ -12,3 +12,10 @@ open.addEventListener('click',() => {
 
 
 close.addEventListener('click',()=> container.classList.remove('show-nav'))
+
+
+history.scrollRestoration = "manual";
+
+$(window).on('beforeunload', function(){
+      $(window).scrollTop(0);
+});
