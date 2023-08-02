@@ -17,6 +17,7 @@ hr {
     font-weight: bold;
     letter-spacing: 2px;
     color:white;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #board {
@@ -100,4 +101,18 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.abs{
+    position: absolute;
+    left: 35px;
+    top: 30px;
+    background-color: transparent;
+    
+    
+
+
+}
+a{
+    text-decoration: none;
+    color: black;
 }
