@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    background: linear-gradient(110deg, #c83349 25%, #e06377 55%);
+    background: linear-gradient(110deg, #c83349 35%, #e06377 55%);
     position: relative;
 }
 
@@ -45,7 +45,8 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+   
+
 }
 
 .correct {
@@ -108,10 +109,6 @@ hr {
     left: 35px;
     top: 30px;
     background-color: transparent;
-    
-    
-
-
 }
 a{
     text-decoration: none;
